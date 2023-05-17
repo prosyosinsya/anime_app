@@ -88,6 +88,11 @@ header {
         justify-content: center;
         align-items: center;
         position: relative;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(185, 184, 184);
+        }
 
         .item {
           width: 25px;
@@ -96,7 +101,7 @@ header {
           background-color: $b;
         }
 
-        .dropdown-menu {
+        .dropdown-menu.active {
           position: absolute;
           display: block;
           display: flex;
@@ -117,6 +122,11 @@ header {
             height: 25px;
             text-align: center;
             line-height: 25px;
+
+            &:hover {
+              background-color: rgb(56, 56, 56);
+              color: $w;
+            }
           }
         }
       }
