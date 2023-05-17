@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Planner</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+<body>
+  <header>
+    <%= image_tag "fukidashi-illust0202", class: "image" %>
+    <span class="title">
+      Anime<br>
+      Planner
+    </span>
+    <nav>
+      <ul class="nav-list">
+        <li>アニメ</li>
+        <li>漫画</li>
+      </ul>
+    </nav>
+  </header>
+  <div class="body">
+    <div class="bodyInner">
+      <div class="env">
+        <span class="title">アニメ一覧</span>
+        <div class="hamburger">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <ul class="dropdown-menu">
+            <li class="item new">追加</li>
+            <li class="item edit">編集</li>
+            <li class="item delete">削除</li>
+          </ul>
+        </div>
+      </div>  
+      <div class="itemContainer">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

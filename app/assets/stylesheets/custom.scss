@@ -1,0 +1,141 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$g: rgb(220, 217, 217);
+$b: rgb(94, 94, 94);
+$w: white;
+
+body {
+  margin: 0 60px
+}
+
+// header
+header {
+  background-color: $g;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  position: relative;
+
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .title {
+    position: absolute;
+    top: 24px;
+    left: 69px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav {
+    .nav-list {
+      display: flex;
+      gap: 20px;
+      height: 100px;
+      align-items: center;
+
+      li {
+        // display: inline-block;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        list-style: none;
+        background-color: $b;
+        color: $w;
+      }
+    }
+  }
+}
+
+// body
+.body {
+  background-color: $b;
+  width: 100%;
+  height: calc(100vh - 100px);
+
+  .bodyInner {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+
+    .env {
+      height: 10%;
+      background-color: $b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-size: 40px;
+        font-weight: bold;
+        color: $w;
+        line-height: 100%;
+      }
+
+      .hamburger {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: $w;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .item {
+          width: 25px;
+          height: 3px;
+          margin: 2px;
+          background-color: $b;
+        }
+
+        .dropdown-menu {
+          position: absolute;
+          display: block;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: $b;
+          min-width: 60px;
+          height: 100px;
+          top: 50px;
+          left: -6px; 
+          border: 1px solid $w;
+  
+          .item {
+            background-color: $g;
+            color: $b;
+            width: 80%;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
+    .itemContainer {
+      height: 90%;
+      background-color: $g;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .item {
+        width: 90%;
+        height: 12%;
+        background-color: $w;
+        margin-top: 15px;
+      }
+    }
+  }
+}
