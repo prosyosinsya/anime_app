@@ -1,8 +1,8 @@
-document.addEventListener("turbo:load", function() {
+document.addEventListener("turbo:load", () => {
   let hamburger = document.querySelector(".hamburger");
-  hamburger.addEventListener("click", function(event) {
-    event.preventDefault();
-    let menu = document.querySelector(".dropdown-menu");
+  hamburger.addEventListener("click", (e) => {
+    e.preventDefault();
+    let menu = document.querySelector(".dropdownMenu");
     menu.classList.toggle("active");
   });
 });
