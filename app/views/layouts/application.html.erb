@@ -11,16 +11,8 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <div class="notification is-info">
-        <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>
-
-    <% if flash[:notice] %>
-      <div class="notification is-danger">
-        <p class="alert"><%= alert %></p>
-      </div>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     
     <%= yield %>
