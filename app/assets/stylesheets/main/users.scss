@@ -15,7 +15,7 @@ body {
       }
     }
 
-    .box-inner {
+    .boxInner {
       width: 50%;
       margin: 60px auto 0;
       height: 100%;
@@ -37,6 +37,7 @@ body {
           margin: 0 auto;
           background-color: skyblue;
           font-weight: bold; 
+          cursor: pointer;
         }
       }
     }
