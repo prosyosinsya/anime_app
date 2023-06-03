@@ -21,6 +21,7 @@
     </div>
     <nav>
       <ul class="navList">
+        <%= @user.email %>のプラン
         <li>アニメ</li>
         <li>漫画</li>
         <li><%= link_to "退出", destroy_user_session_path, method: :delete, class: "logOut" %></li>
