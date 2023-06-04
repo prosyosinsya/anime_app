@@ -22,8 +22,6 @@
     <nav>
       <ul class="navList">
         <%= @user.email %>のプラン
-        <li>アニメ</li>
-        <li>漫画</li>
         <li><%= link_to "退出", destroy_user_session_path, method: :delete, class: "logOut" %></li>
       </ul>
     </nav>
@@ -44,12 +42,28 @@
         </ul>
       </div>  
       <div class="itemContainer">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+        <% @animes.each do |anime| %>
+          <div class="item">
+            <% if anime.image.attached? %>
+              <div class="image">
+                <%= image_tag anime.image.variant(
+                    resize: "80x80",
+                    gravity: "center")            
+                %>
+              </div>
+            <% else %>
+              <div class="image">
+                <%= image_tag "sample", :size => "58x70" %>
+              </div>
+            <% end %>
+            <h1 class="animeTitle"><%= anime.title %></h1>
+            <div class="part">
+              <p class="currentPart"><%= anime.current_part %></p>
+              <p class="space">/</p>
+              <p class="allPart"><%= anime.all_part %></p>
+            </div>
+          </div>
+        <% end %> 
       </div>
     </div>
   </div>
