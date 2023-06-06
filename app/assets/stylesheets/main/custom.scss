@@ -112,6 +112,7 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid black;
 
       .title {
         font-size: 40px;
@@ -121,66 +122,22 @@ header {
         cursor: default;
       }
 
-      .hamburger {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+      .btn {
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 10px;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        background-color: $sb;
+        color: black;
+        box-shadow: 4px 4px 6px 0 #000000;
+        border-radius: 5px;
 
         &:hover {
-          background-color: rgb(185, 184, 184);
-        }
-
-        .item {
-          width: 25px;
-          height: 3px;
-          margin: 2px;
-          background-color: $w;
-        }
-      }
-
-      .dropdownMenu {
-        display: none;
-
-        &.active {
-          padding: 0;
-          position: absolute;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background-color: black;
-          bottom: -110px;
-          right: -8px;
-          width: 60px;
-          height: 90px;
-          border: 1px solid $w;
-
-          .item {
-            background-color: $g;
-            color: $b;
-            width: 50px;
-            list-style: none;
-            height: 25px;
-            text-align: center;
-            line-height: 25px;
-            border-bottom: 1px solid black;
-            cursor: pointer;
-  
-            &:hover {
-              background-color: rgb(56, 56, 56);
-              color: $w;
-            }
-  
-            &:last-child {
-              border: none;
-            }
-          }
+          background-color: rgb(5, 138, 191);
+          color: $w;
         }
       }
     }
