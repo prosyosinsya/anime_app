@@ -1,2 +1,33 @@
-<h1>Animes#edit</h1>
-<p>Find me in app/views/animes/edit.html.erb</p>
+<div class="box">
+  <header>
+    <h2 class="signTitle">編集</h2>
+  </header>
+  <div class="boxInner">
+    <%= form_for @anime do |f| %>
+      <div class="field">
+        <%= f.label :image, "画像" %><br />
+        <%= f.file_field :image %>
+      </div>
+
+      <div class="field">
+        <%= f.label :title, "アニメ名" %><br />
+        <%= f.text_field :title, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :all_part, "全ての話数" %><br />
+        <%= f.number_field :all_part, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_part, "現在の話数" %><br />
+        <%= f.number_field :current_part, autofocus: true %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit "編集" %>
+      </div>
+    <% end %>
+    <%= link_to "ホームへ", root_path %>
+  </div>
+</div>

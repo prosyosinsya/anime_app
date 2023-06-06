@@ -47,15 +47,18 @@
             <% if anime.image.attached? %>
               <div class="image">
                 <%= image_tag anime.image.variant(
-                    resize: "80x80",
-                    gravity: "center")            
+                  resize: "80x80",
+                  gravity: "center")            
                 %>
               </div>
             <% else %>
               <div class="image">
-                <%= image_tag "sample", :size => "58x70" %>
+                <%= image_tag "sample", :size => "56x70" %>
               </div>
             <% end %>
+            <%= link_to "編集", edit_anime_path(anime), class: "btn edit" %> 
+            <%= link_to "削除", anime, data: { "turbo-method": :delete,
+                                                    turbo_confirm: "削除しますか?" }, class: "btn delete" %>
             <h1 class="animeTitle"><%= anime.title %></h1>
             <div class="part">
               <p class="currentPart"><%= anime.current_part %></p>
