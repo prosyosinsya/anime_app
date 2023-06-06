@@ -15,6 +15,7 @@ header {
   justify-content: space-between;
   padding: 0 50px;
   position: relative;
+  border-bottom: 1px solid black;
 
   .logo {
     width: 90px;
@@ -186,7 +187,6 @@ header {
 
     .itemContainer {
       height: 90%;
-      background-color: rgb(196, 196, 196);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -199,15 +199,45 @@ header {
         background-color: $w;
         margin-top: 15px;
         display: flex;
-        align-items: center;  
+        align-items: center; 
+        border: 4px solid black; 
+        border-radius: 10px;
 
         .image {
           width: 60px;
           height: 90%;
-          margin-left: 10px;
+          margin: 0 10px;
           border-radius: 50%; 
-          border: 1px solid black;
+          border: 2px solid black;
           overflow: hidden;
+        }
+
+        .btn {
+          width: 60px;
+          margin-right: 10px;
+          text-align: center;
+          text-decoration: none;
+          color: black;
+          box-shadow: 4px 4px 6px 0 #000000;
+          border-radius: 5px;
+        }
+
+        .edit {
+          background-color: rgb(5, 195, 5);
+
+          &:hover {
+            background-color: green;
+            color: $w;
+          }
+        }
+
+        .delete {
+          background-color: red;
+
+          &:hover {
+            background-color: rgb(181, 5, 5);
+            color: $w;
+          }
         }
 
         .animeTitle {
