@@ -30,16 +30,7 @@
     <div class="bodyInner">
       <div class="env">
         <span class="title">アニメ一覧</span>
-        <div class="hamburger">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-        </div>
-        <ul class="dropdownMenu">
-          <li class="item new">追加</li>
-          <li class="item edit">編集</li>
-          <li class="item delete">削除</li>
-        </ul>
+        <%= link_to "新規作成", new_anime_path, class: "btn new" %>
       </div>  
       <div class="itemContainer">
         <% @animes.each do |anime| %>
@@ -53,7 +44,7 @@
               </div>
             <% else %>
               <div class="image">
-                <%= image_tag "sample", :size => "56x70" %>
+                <%= image_tag "sample", size: "51x70", class: "sample" %>
               </div>
             <% end %>
             <%= link_to "編集", edit_anime_path(anime), class: "btn edit" %> 
