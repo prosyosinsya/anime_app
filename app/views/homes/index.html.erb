@@ -32,6 +32,7 @@
         <span class="title">アニメ一覧</span>
         <%= link_to "新規作成", new_anime_path, class: "btn new" %>
       </div>  
+      <%= will_paginate @animes, renderer: WillPaginate::ActionView::LinkRenderer, previous_label: '&#8592; &nbsp;前', next_label: '次 &#8594;' %>
       <div class="itemContainer">
         <% @animes.each do |anime| %>
           <div class="item">
@@ -59,6 +60,7 @@
           </div>
         <% end %> 
       </div>
+      <%= will_paginate @animes, renderer: WillPaginate::ActionView::LinkRenderer, previous_label: '&#8592; &nbsp;前', next_label: '次 &#8594;' %>
     </div>
   </div>
 </body>

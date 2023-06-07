@@ -3,6 +3,6 @@ class HomesController < ApplicationController
 
   def index
     @user = current_user
-    @animes = Anime.all
+    @animes = Anime.paginate(page: params[:page], per_page: 5)
   end
 end

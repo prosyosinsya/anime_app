@@ -13,6 +13,9 @@ gem "bootstrap-sass",  "3.4.1"
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
+gem "will_paginate",           "3.3.1"
+gem 'will_paginate-bootstrap4'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
