@@ -6,8 +6,11 @@ class AnimesController < ApplicationController
   def create
     @anime = Anime.new(anime_params)
     @anime.user_id = current_user.id
-    @anime.save
-    redirect_to root_path
+    if @anime.save
+      redirect_to root_path, notice:"新規作成しました"
+    else
+      redirect_to new_anime_path, alert:"新規作成に失敗しました"
+    end
   end
 
   def edit
@@ -16,8 +19,11 @@ class AnimesController < ApplicationController
 
   def update
     @anime = Anime.find(params[:id])
-    @anime.update(anime_params)
-    redirect_to root_path
+    if @anime.update(anime_params)
+      redirect_to root_path, notice:"更新しました"
+    else
+      redirect_to edit_anime_path(@anime), alert:"更新に失敗しました"
+    end
   end
 
   def destroy
