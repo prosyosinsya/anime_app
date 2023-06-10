@@ -2,6 +2,18 @@
   <header>
     <h2 class="signTitle">新規作成</h2>
   </header>
+  <% if @anime.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <div id="error_explanation">
+        <h3><%= pluralize(@anime.errors.count, "error") %> prohibited this obj from being saved:</h3>
+        <ul>
+          <% @anime.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %> 
   <div class="boxInner">
     <%= form_for @anime do |f| %>
       <div class="field">
@@ -10,7 +22,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :title, "アニメ名" %><br />
+        <%= f.label :title, "アニメ名(30文字以内で入力してください)" %><br />
         <%= f.text_field :title, autofocus: true %>
       </div>
 
@@ -20,7 +32,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :current_part, "現在の話数" %><br />
+        <%= f.label :current_part, "現在の話数(全ての話数より大きい数字は入力できません)" %><br />
         <%= f.number_field :current_part, autofocus: true %>
       </div>
       
