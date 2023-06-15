@@ -50,6 +50,12 @@ header {
       height: 100px;
       align-items: center;
 
+      .email {
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
       li {
         width: 60px;
         height: 30px;
@@ -142,6 +148,7 @@ header {
       }
     }
 
+// item
     .itemContainer {
       height: 90%;
       display: flex;
@@ -169,31 +176,41 @@ header {
           overflow: hidden;
         }
 
-        .btn {
-          width: 60px;
-          margin-right: 10px;
-          text-align: center;
-          text-decoration: none;
-          color: black;
-          box-shadow: 4px 4px 6px 0 #000000;
-          border-radius: 5px;
-        }
+        .btnContainer {
+          display: flex; 
 
-        .edit {
-          background-color: rgb(5, 195, 5);
-
-          &:hover {
-            background-color: green;
-            color: $w;
+          @media screen and (max-width: 480px) {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
           }
-        }
 
-        .delete {
-          background-color: red;
-
-          &:hover {
-            background-color: rgb(181, 5, 5);
-            color: $w;
+          .btn {
+            width: 60px;
+            margin-right: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            box-shadow: 4px 4px 6px 0 #000000;
+            border-radius: 5px;
+          }
+  
+          .edit {
+            background-color: rgb(5, 195, 5);
+  
+            &:hover {
+              background-color: green;
+              color: $w;
+            }
+          }
+  
+          .delete {
+            background-color: red;
+  
+            &:hover {
+              background-color: rgb(181, 5, 5);
+              color: $w;
+            }
           }
         }
 
@@ -201,6 +218,13 @@ header {
           width: 80%;
           text-align: center;
           margin: 0;
+
+          @media screen and (max-width: 768px) {
+            font-size: 20px;
+          }
+          @media screen and (max-width: 480px) {
+            font-size: 15px;
+          }
         }
 
         .part {
@@ -213,6 +237,13 @@ header {
             margin: 0;
             font-weight: bold;
             font-size: 30px;
+
+            @media screen and (max-width: 1024px) {
+              font-size: 20px;
+            }
+            @media screen and (max-width: 768px) {
+              font-size: 10px;
+            }
           }
 
           .currentPart {
