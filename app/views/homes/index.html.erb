@@ -21,7 +21,9 @@
     </div>
     <nav>
       <ul class="navList">
-        <%= @user.email %>のプラン
+        <div class="email">
+          <%= @user.email %>のプラン
+        </div>
         <li><%= link_to "退出", destroy_user_session_path, method: :delete, class: "logOut" %></li>
       </ul>
     </nav>
@@ -39,8 +41,10 @@
             <% if anime.image.attached? %>
               <div class="image">
                 <%= image_tag anime.image.variant(
-                  resize: "80x80",
-                  gravity: "center")            
+                    gravity: :center,
+                    resize:"120x90",
+                    crop:"55x120+0+40"
+                  )            
                 %>
               </div>
             <% else %>
@@ -48,9 +52,11 @@
                 <%= image_tag "sample", size: "51x70", class: "sample" %>
               </div>
             <% end %>
-            <%= link_to "編集", edit_anime_path(anime), class: "btn edit" %> 
-            <%= link_to "削除", anime, data: { "turbo-method": :delete,
-                                                    turbo_confirm: "削除しますか?" }, class: "btn delete" %>
+            <div class="btnContainer">
+              <%= link_to "編集", edit_anime_path(anime), class: "btn edit" %> 
+              <%= link_to "削除", anime, data: { "turbo-method": :delete,
+                                                      turbo_confirm: "削除しますか?" }, class: "btn delete" %>
+            </div>
             <h1 class="animeTitle"><%= anime.title %></h1>
             <div class="part">
               <p class="currentPart"><%= anime.current_part %></p>
